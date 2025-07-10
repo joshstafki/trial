@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs By Josh - Podcast</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (headings) and Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; /* Dark background */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1; /* Indigo thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5; /* Darker indigo on hover */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 for a dark theme */
+            color: #e2e8f0; /* Light text color */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #cbd5e1; /* Lighter text for headings */
+        }
+        .section-padding {
+            padding: 6rem 0; /* Generous vertical padding for sections */
+        }
+        .card {
+            background-color: #1e293b; /* Slate 800 for card backgrounds */
+            border-radius: 1rem; /* More rounded corners */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #6366f1; /* Indigo 500 */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #4f46e5; /* Indigo 600 */
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: #334155; /* Slate 700 */
+            color: #cbd5e1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .btn-secondary:hover {
+            background-color: #475569; /* Slate 600 */
+            transform: translateY(-2px);
+        }
+        .nav-link {
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #a78bfa; /* Violet 400 */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full bg-slate-900 bg-opacity-90 backdrop-blur-sm z-50 shadow-lg rounded-b-xl">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-indigo-400 tracking-wide">designsbyjosh.net</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">Home</a>
+                <a href="about.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">About / Resume</a>
+                <a href="podcast.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">Podcast</a>
+                <a href="intrepid-flight.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">Intrepid Flight Portfolio</a>
+                <a href="astronautik.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">Astronautik</a>
+                <a href="support.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">Support</a>
+                <a href="media-inquiry.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300">Media Inquiry</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-300 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 py-4 rounded-b-xl">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="index.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">Home</a>
+                <a href="about.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">About / Resume</a>
+                <a href="podcast.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">Podcast</a>
+                <a href="intrepid-flight.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">Intrepid Flight Portfolio</a>
+                <a href="astronautik.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">Astronautik</a>
+                <a href="support.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">Support</a>
+                <a href="media-inquiry.html" class="nav-link text-lg font-medium text-gray-300 hover:text-indigo-300 py-2 w-full text-center">Media Inquiry</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Podcast Section: Light & Origin -->
+    <main class="section-padding bg-slate-900 pt-32"> <!-- Added pt-32 to account for fixed nav -->
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-16 text-indigo-300">Light & Origin: The Podcast</h2>
+            <div class="card p-8 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <img src="https://placehold.co/200x200/4f46e5/ffffff?text=Podcast+Logo" alt="Light & Origin Podcast Logo" class="w-48 h-48 rounded-full mb-6 md:mb-0 shadow-lg">
+                    <div class="text-left">
+                        <h3 class="text-4xl font-semibold mb-4 text-gray-200">Exploring the Frontiers of Innovation and Existence</h3>
+                        <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                            "Light & Origin" is a podcast hosted by Josh Stafki, delving into the profound questions at the intersection of science, technology, philosophy, and the human experience. Each episode features insightful discussions with leading experts, innovators, and thinkers on topics ranging from the future of space travel and artificial intelligence to the origins of consciousness and the ethics of technological advancement.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                            Join us as we illuminate complex concepts and explore the fundamental forces that shape our universe and our understanding of it.
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="#" class="btn-primary inline-flex items-center">
+                                <i class="fab fa-spotify mr-2"></i>
+                                Listen on Spotify
+                            </a>
+                            <a href="#" class="btn-secondary inline-flex items-center">
+                                <i class="fas fa-podcast mr-2"></i>
+                                Apple Podcasts
+                            </a>
+                            <a href="#" class="btn-secondary inline-flex items-center">
+                                <i class="fab fa-google-play mr-2"></i>
+                                Google Podcasts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <h3 class="text-4xl font-semibold mb-10 text-gray-200">Recent Episodes</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Episode 1 -->
+                    <div class="card p-6 text-left">
+                        <h4 class="text-2xl font-semibold mb-3 text-indigo-300">Episode 12: The Quantum Leap in Computing</h4>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-calendar-alt mr-2"></i>July 1, 2025</p>
+                        <p class="text-gray-300 mb-4">
+                            Exploring the latest breakthroughs in quantum computing and its potential to revolutionize industries from medicine to finance.
+                        </p>
+                        <a href="#" class="btn-secondary text-sm">Listen Now <i class="fas fa-play ml-1"></i></a>
+                    </div>
+                    <!-- Episode 2 -->
+                    <div class="card p-6 text-left">
+                        <h4 class="text-2xl font-semibold mb-3 text-indigo-300">Episode 11: The Ethics of AI in Space Exploration</h4>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-calendar-alt mr-2"></i>June 15, 2025</p>
+                        <p class="text-gray-300 mb-4">
+                            A deep dive into the moral considerations and societal impacts of deploying advanced AI in autonomous space missions.
+                        </p>
+                        <a href="#" class="btn-secondary text-sm">Listen Now <i class="fas fa-play ml-1"></i></a>
+                    </div>
+                    <!-- Episode 3 -->
+                    <div class="card p-6 text-left">
+                        <h4 class="text-2xl font-semibold mb-3 text-indigo-300">Episode 10: Terraforming Mars: Dream or Reality?</h4>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-calendar-alt mr-2"></i>June 1, 2025</p>
+                        <p class="text-gray-300 mb-4">
+                            Discussions on the scientific and engineering challenges, as well as the long-term implications, of making Mars habitable.
+                        </p>
+                        <a href="#" class="btn-secondary text-sm">Listen Now <i class="fas fa-play ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 text-center text-gray-400 text-lg">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Designs By Josh. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300"><i class="fab fa-github text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors duration-300"><i class="fas fa-envelope text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 z-50 opacity-0 transform translate-y-4 hidden">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.remove('hidden', 'opacity-0', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'translate-y-4');
+                // Add hidden after transition for accessibility/layout
+                setTimeout(() => {
+                    if (window.scrollY <= 300) {
+                        backToTopButton.classList.add('hidden');
+                    }
+                }, 300);
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
